@@ -13,7 +13,7 @@
     <div class="col-sm-5">
       <h3 class=""> Top Tracks</h3>
       <ol type="1" class="top-tracks">
-        <li *ngFor="let track of topTracks">{{track?.title}}<span class="pull-right"> {{track?.duration}} mins</span></li>
+        <li *ngFor="let track of topTracks">{{track?.title}}<span class="pull-right">🕓 {{convertTime(track?.duration)}} mins</span></li>
       </ol>
     </div>
   </div>

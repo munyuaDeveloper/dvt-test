@@ -48,4 +48,8 @@ export class ArtistDetailsComponent implements OnInit {
       this.artistDetails = res;
     });
   }
+
+  convertTime(s: number): number {
+    return  Math.floor(s / 60);
+  }
 }

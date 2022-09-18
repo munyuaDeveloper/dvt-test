@@ -15,7 +15,7 @@ export function ArtistReducer(state = initialState, action: ActionsUnion) {
     case ActionTypes.LoadArtists:
       return {
         ...state,
-        artists: [...action.payload]
+        artists: [... action.payload]
       };
     default:
       return state;

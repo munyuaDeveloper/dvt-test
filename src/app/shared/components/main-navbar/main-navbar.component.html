@@ -1,20 +1,38 @@
 <nav class="navbar navbar-icon-top navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="/">Deezer Music App</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <div class="header-action-right d-block d-lg-none">
+    <div class="header-action-2">
+      <div class="header-action-icon-2">
+        <a class="mini-cart-icon"  (click)="showMobilSearchBar()">
+          <img alt="search" src="assets/search-solid.svg">
+        </a>
+      </div>
+    </div>
+  </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <form class="my-2 my-lg-0 w-100">
-        <div class="d-inline-flex">
-          <input id="typeahead-template" type="text" class="form-control ml-5 mr-sm-2 search-input" name="search"
-                 [(ngModel)]="searchKeyword"
-                 [ngbTypeahead]="search"
+        <div class="">
+          <input #artistSearchInput type="text" class="form-control ml-5 mr-sm-2 search-input" name="search"
                  placeholder="Search your favorite artists" />
         </div>
-        <span class="text-white" *ngIf="searching">Searching ...</span>
+
       </form>
     </ul>
   </div>
+
 </nav>
+<div *ngIf="showMobileSearch" class="mobile-search search-style-3 mobile-header-border">
+  <form class="my-2 my-lg-0 w-100">
+    <div class="">
+      <input #artistSearchInput type="text" class="form-control ml-5 mr-sm-2 search-input" name="search"
+             placeholder="Search your favorite artists" />
+    </div>
+
+  </form>
+</div>
+<div class="searching-status">
+  <span class="text-center" *ngIf="isSearching">Searching ...</span>
+</div>
+
