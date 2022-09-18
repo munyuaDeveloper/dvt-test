@@ -1,10 +1,10 @@
 <div class="card">
   <div class="card-image-bg">
-    <img class="card-img-top" src="https://cdns-images.dzcdn.net/images/artist/7f3c0956357c326b2db2cf436f1dc8c5/500x500.jpg" alt="Card image cap">
+    <img class="card-img-top" [src]="artist?.picture" [alt]="artist?.name">
   </div>
 
   <div class="card-body">
-    <h5 class="card-title">Bruno Mars</h5>
+    <h5 class="card-title">{{artist?.name}}</h5>
     <p class="card-text">230 k Fans</p>
   </div>
 </div>

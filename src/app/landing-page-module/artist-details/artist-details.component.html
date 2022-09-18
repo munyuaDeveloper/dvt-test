@@ -1,32 +1,28 @@
-<div class="container my-5">
+<div class="container mt-5">
   <div class="row">
     <div class="col-sm-7">
       <div class="artist-detail">
         <div>
-          <h3>Bruno Mars</h3>
-          <p>377k Fans</p>
+          <h3>{{artistDetails?.name}}</h3>
+          <p>{{artistDetails?.nb_fan}} Fans</p>
         </div>
-        <img class="artist-img" src="https://cdns-images.dzcdn.net/images/artist/7f3c0956357c326b2db2cf436f1dc8c5/500x500.jpg" alt="Artist Name">
+        <img class="artist-img" [src]="artistDetails?.picture" [alt]="artistDetails?.name">
 
       </div>
     </div>
     <div class="col-sm-5">
-      <h3 class="my-3"> Top Tracks</h3>
+      <h3 class=""> Top Tracks</h3>
       <ol type="1" class="top-tracks">
-        <li>Track 1</li>
-        <li>Track 2</li>
-        <li>Track 3</li>
-        <li>Track 4</li>
-        <li>Track 5</li>
+        <li *ngFor="let track of topTracks">{{track?.title}}<span class="pull-right"> {{track?.duration}} mins</span></li>
       </ol>
     </div>
   </div>
 </div>
 
-<div class="container my-5">
+<div class="container mb-5 mt-1">
   <h3>Albums</h3>
   <div class="row">
-    <div class="col-sm-3 my-2" *ngFor="let alb of albums">
+    <div class="col-sm-3 my-2" *ngFor="let alb of []">
       <app-album-card></app-album-card>
     </div>
   </div>

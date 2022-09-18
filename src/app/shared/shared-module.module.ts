@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { MainNavbarComponent } from './components/main-navbar/main-navbar.component';
 import { ArtistCardComponent } from './components/artist-card/artist-card.component';
 import { AlbumCardComponent } from './components/album-card/album-card.component';
+import {NgbTypeaheadModule} from "@ng-bootstrap/ng-bootstrap";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -18,7 +20,9 @@ import { AlbumCardComponent } from './components/album-card/album-card.component
     AlbumCardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    NgbTypeaheadModule,
+    FormsModule
   ]
 })
 export class SharedModuleModule { }

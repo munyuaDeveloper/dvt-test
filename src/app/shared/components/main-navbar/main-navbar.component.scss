@@ -1,7 +1,42 @@
 .search-input{
-  width: 50%;
+  width: 100%;
 }
 .navbar-nav{
   display: initial;
   width: 100%;
+}
+
+.searching-text{
+  margin-left: 128px;
+}
+::ng-deep.dropdown-menu.show {
+  display: none;
+  width: 30% !important;
+  padding: 0 !important;
+  padding-bottom: 10px !important;
+
+  .dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #3BB77E;
+  }
+  .dropdown-item {
+    display: flex;
+    align-items: center;
+    padding: 10px !important;
+  }
+}
+
+
+.mobile-search {
+  padding: 0;
+  width: 100%;
+  margin-top: 10px;
+  ::ng-deep.dropdown-menu.show {
+    width: 93.5% !important;
+  }
+  .form-control{
+    border-radius: 0px;
+
+  }
 }

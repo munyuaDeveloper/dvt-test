@@ -6,8 +6,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control ml-5 mr-sm-2 search-input" type="text" placeholder="Search" aria-label="Search">
+      <form class="my-2 my-lg-0 w-100">
+        <div class="d-inline-flex">
+          <input id="typeahead-template" type="text" class="form-control ml-5 mr-sm-2 search-input" name="search"
+                 [(ngModel)]="searchKeyword"
+                 [ngbTypeahead]="search"
+                 placeholder="Search your favorite artists" />
+        </div>
+        <span class="text-white" *ngIf="searching">Searching ...</span>
       </form>
     </ul>
   </div>
