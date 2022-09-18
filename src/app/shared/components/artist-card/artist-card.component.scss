@@ -1,0 +1,16 @@
+.card-img-top{
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  display: block;
+  margin: 20px auto;
+}
+.card-image-bg{
+  background: hsla(191, 88%, 81%, 1);
+
+  background: linear-gradient(90deg, hsla(191, 88%, 81%, 1) 0%, hsla(260, 72%, 82%, 1) 50%, hsla(247, 73%, 69%, 1) 100%);
+
+  background: -moz-linear-gradient(90deg, hsla(191, 88%, 81%, 1) 0%, hsla(260, 72%, 82%, 1) 50%, hsla(247, 73%, 69%, 1) 100%);
+
+  background: -webkit-linear-gradient(90deg, hsla(191, 88%, 81%, 1) 0%, hsla(260, 72%, 82%, 1) 50%, hsla(247, 73%, 69%, 1) 100%);
+}
