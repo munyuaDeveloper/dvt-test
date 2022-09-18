@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 105.0.0.0 (Mac OS 10.15.7)" package="unit" timestamp="2022-09-18T16:48:03" id="0" hostname="Peters-MacBook-Pro.local" tests="8" errors="0" failures="1" time="0.12">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/105.0.0.0 Safari/537.36"/>
+  </properties>
+  <testcase name="MainNavbarComponent should create" time="0.057" classname="unit.MainNavbarComponent"/>
+  <testcase name="SharedService should be created" time="0.003" classname="unit.SharedService"/>
+  <testcase name="AlbumCardComponent should create" time="0.007" classname="unit.AlbumCardComponent"/>
+  <testcase name="ArtistCardComponent should create" time="0.008" classname="unit.ArtistCardComponent"/>
+  <testcase name="HomeComponent should create" time="0.016" classname="unit.HomeComponent"/>
+  <testcase name="LandingPageComponent should create" time="0.009" classname="unit.LandingPageComponent"/>
+  <testcase name="AppComponent should create the app" time="0.005" classname="unit.AppComponent"/>
+  <testcase name="ArtistDetailsComponent should create" time="0.015" classname="unit.ArtistDetailsComponent">
+    <failure type="">TypeError: Cannot read properties of undefined (reading 'subscribe')
+    at ArtistDetailsComponent.ngOnInit (src/app/landing-page-module/artist-details/artist-details.component.ts:25:30)
+    at callHook (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2573:1)
+    at callHooks (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2542:1)
+    at executeInitAndCheckHooks (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:2493:1)
+    at refreshView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9481:1)
+    at renderComponentOrTemplate (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:9580:1)
+    at tickRootContext (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10811:1)
+    at detectChangesInRootView (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:10836:1)
+    at RootViewRef.detectChanges (node_modules/@angular/core/__ivy_ngcc__/fesm2015/core.js:22815:1)
+    at ComponentFixture._tick (node_modules/@angular/core/__ivy_ngcc__/fesm2015/testing.js:141:1)
+</failure>
+  </testcase>
+  <system-out>
+    <![CDATA[Chrome 105.0.0.0 (Mac OS 10.15.7) LOG: []
+,Chrome 105.0.0.0 (Mac OS 10.15.7) ERROR: 'NG0304: 'app-main-navbar' is not a known element:
+1. If 'app-main-navbar' is an Angular component, then verify that it is part of this module.
+2. If 'app-main-navbar' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 105.0.0.0 (Mac OS 10.15.7) ERROR: 'NG0304: 'router-outlet' is not a known element:
+1. If 'router-outlet' is an Angular component, then verify that it is part of this module.
+2. If 'router-outlet' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

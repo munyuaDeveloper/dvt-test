@@ -22,7 +22,7 @@ export class MainNavbarComponent implements OnInit {
   showMobileSearch = false;
 
   constructor(
-    private sharedService: SharedService,
+    public sharedService: SharedService,
     private store: Store<StateModel>,
     private router: Router
   ) {

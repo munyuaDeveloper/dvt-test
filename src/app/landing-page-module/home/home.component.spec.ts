@@ -1,6 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { HomeComponent } from './home.component';
+import {
+  ActionsSubject,
+  ReducerManager,
+  ReducerManagerDispatcher,
+  StateObservable,
+  Store,
+  StoreModule
+} from '@ngrx/store';
+import {ArtistReducer} from '../../store/reducer';
+import {HttpClientTestingModule} from "@angular/common/http/testing";
+import {HttpClientModule} from "@angular/common/http";
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
@@ -8,7 +19,10 @@ describe('HomeComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ HomeComponent ]
+      declarations: [ HomeComponent ],
+      // @ts-ignore
+      imports: [HttpClientModule, StoreModule.forRoot({ artist: ArtistReducer })],
+      providers: []
     })
     .compileComponents();
   });
