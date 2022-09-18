@@ -5,6 +5,7 @@
         <div>
           <h3>{{artistDetails?.name}}</h3>
           <p>{{artistDetails?.nb_fan}} Fans</p>
+          <p>{{artistDetails?.nb_album}} Albums</p>
         </div>
         <img class="artist-img" [src]="artistDetails?.picture" [alt]="artistDetails?.name">
 
@@ -22,8 +23,8 @@
 <div class="container mb-5 mt-1">
   <h3>Albums</h3>
   <div class="row">
-    <div class="col-sm-3 my-2" *ngFor="let alb of []">
-      <app-album-card></app-album-card>
+    <div class="col-sm-3 my-2" *ngFor="let alb of albums">
+      <app-album-card [album]="alb"></app-album-card>
     </div>
   </div>
 </div>

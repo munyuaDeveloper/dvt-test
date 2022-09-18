@@ -26,6 +26,10 @@ export class ArtistDetailsComponent implements OnInit {
       this.artistId = param.id;
     });
 
+    // @ts-ignore
+    this.store.pipe(select('artist')).subscribe((data: any) => {
+      this.albums = data.albums;
+    });
     this.getArtistDetails();
     this.getTopTracks();
     this.getTopAlbums();
@@ -38,8 +42,9 @@ export class ArtistDetailsComponent implements OnInit {
   }
 
   getTopAlbums(): void{
-    this.sharedService.getData(`${DeezerApi.album}/${this.artistId}`).subscribe((res: any) => {
-      this.albums = res.data;
+    // Did not get the actual api to get the albums for a user
+    this.sharedService.getData(`${DeezerApi.chart}`).subscribe((res: any) => {
+      this.albums = res.albums.data;
     });
   }
 

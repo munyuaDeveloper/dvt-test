@@ -1,7 +1,8 @@
 import { Action } from '@ngrx/store';
-import {Artist, Data} from '../shared/services/sharedInterface';
+import {Album, Artist, Data} from '../shared/services/sharedInterface';
 export enum ActionTypes {
   LoadArtists = '[Artist] Load artist',
+  LoadAlbums = '[Album] Load albums',
 }
 
 export class LoadArtists implements Action {
@@ -10,4 +11,10 @@ export class LoadArtists implements Action {
   constructor(public payload: Artist[]) {}
 }
 
-export type ActionsUnion = LoadArtists;
+export class LoadAlbums implements Action {
+  readonly type = ActionTypes.LoadAlbums;
+
+  constructor(public payload: Album[]) {}
+}
+
+export type ActionsUnion = LoadArtists | LoadAlbums;

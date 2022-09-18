@@ -1,12 +1,14 @@
 import { ActionsUnion, ActionTypes } from './actions';
-import {Data} from '../shared/services/sharedInterface';
+import {Album, Data} from '../shared/services/sharedInterface';
 
 export interface StateModel {
   artists: Data[];
+  albums: Album[];
 }
 
 export const initialState: StateModel = {
   artists: [],
+  albums: []
 };
 
 // tslint:disable-next-line:typedef
@@ -16,6 +18,12 @@ export function ArtistReducer(state = initialState, action: ActionsUnion) {
       return {
         ...state,
         artists: [... action.payload]
+      };
+
+    case ActionTypes.LoadAlbums:
+      return {
+        ...state,
+        albums: [... action.payload]
       };
     default:
       return state;

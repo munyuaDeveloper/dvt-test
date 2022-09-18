@@ -9,6 +9,7 @@ export interface Artist {
   picture_xl: string;
   tracklist: string;
   nb_fan?: number;
+  nb_album?: number;
   type: string;
 }
 

@@ -4,7 +4,7 @@ import {select, Store} from '@ngrx/store';
 import {StateModel} from '../../store/reducer';
 import {SharedService} from '../../shared/services/shared.service';
 import {DeezerApi} from '../../shared/services/apis';
-import {LoadArtists} from '../../store/actions';
+import {LoadAlbums, LoadArtists} from '../../store/actions';
 
 @Component({
   selector: 'app-home',
@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     this.sharedService.getData(DeezerApi.chart).subscribe((res: any) => {
       this.artists = res.artists.data;
       this.store.dispatch(new LoadArtists(this.artists));
+      this.store.dispatch(new LoadAlbums(res?.albums?.data));
     });
-    console.log(this.artists);
   }
 }
