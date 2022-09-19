@@ -5,6 +5,7 @@ import {select, Store} from "@ngrx/store";
 import {StateModel} from "../../store/reducer";
 import {DeezerApi} from "../../shared/services/apis";
 import {Album, Artist} from "../../shared/services/sharedInterface";
+import {LoadAlbums} from "../../store/actions";
 
 @Component({
   selector: 'app-artist-details',
@@ -26,10 +27,6 @@ export class ArtistDetailsComponent implements OnInit {
       this.artistId = param.id;
     });
 
-    // @ts-ignore
-    this.store.pipe(select('artist')).subscribe((data: any) => {
-      this.albums = data.albums;
-    });
     this.getArtistDetails();
     this.getTopTracks();
     this.getTopAlbums();
@@ -43,8 +40,9 @@ export class ArtistDetailsComponent implements OnInit {
 
   getTopAlbums(): void{
     // Did not get the actual api to get the albums for a user
-    this.sharedService.getData(`${DeezerApi.chart}`).subscribe((res: any) => {
-      this.albums = res.albums.data;
+    this.sharedService.getData(`${DeezerApi.artist}/${this.artistId}/albums`).subscribe((res: any) => {
+      this.albums = res?.data;
+      this.store.dispatch(new LoadAlbums(res?.data));
     });
   }
 

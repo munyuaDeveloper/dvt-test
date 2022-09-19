@@ -25,10 +25,9 @@ export class HomeComponent implements OnInit {
     });
   }
   getArtists(): void {
-    this.sharedService.getData(DeezerApi.chart).subscribe((res: any) => {
-      this.artists = res.artists.data;
-      this.store.dispatch(new LoadArtists(this.artists));
-      this.store.dispatch(new LoadAlbums(res?.albums?.data));
+    this.sharedService.getData(DeezerApi.genre).subscribe((res: any) => {
+      this.artists = res.data;
+      // this.store.dispatch(new LoadArtists(this.artists));
     });
   }
 }

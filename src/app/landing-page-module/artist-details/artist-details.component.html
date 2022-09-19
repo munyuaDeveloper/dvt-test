@@ -26,5 +26,6 @@
     <div class="col-sm-3 my-2" *ngFor="let alb of albums">
       <app-album-card [album]="alb"></app-album-card>
     </div>
+    <p class="ml-4" *ngIf="albums.length === 0">No albums found</p>
   </div>
 </div>

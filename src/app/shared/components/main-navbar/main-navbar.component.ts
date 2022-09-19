@@ -3,7 +3,7 @@ import {fromEvent, of} from 'rxjs';
 import {debounceTime, distinctUntilChanged, map, filter} from 'rxjs/operators';
 import {SharedService} from '../../services/shared.service';
 import {DeezerApi} from '../../services/apis';
-import { Data, SearchResults} from '../../services/sharedInterface';
+import { SearchResults} from '../../services/sharedInterface';
 import {Store} from '@ngrx/store';
 import {StateModel} from '../../../store/reducer';
 import {LoadArtists} from '../../../store/actions';
@@ -53,7 +53,10 @@ export class MainNavbarComponent implements OnInit {
       this.searchGetCall(text).subscribe((res: SearchResults) => {
         this.isSearching = false;
         if (res.data.length > 0) {
-          this.prepareData(res.data);
+          this.store.dispatch(new LoadArtists(res.data));
+          if (this.router.url !== '/') {
+            this.router.navigateByUrl('/');
+          }
         }
       }, (err: any) => {
         this.isSearching = false;
@@ -66,18 +69,6 @@ export class MainNavbarComponent implements OnInit {
       return of([]);
     }
     return this.sharedService.getData(DeezerApi.search, { q: term});
-  }
-
-  prepareData(arr: Data[]): void {
-    const data = [];
-    // tslint:disable-next-line:prefer-for-of
-    for (let i = 0; i < arr.length; i++) {
-      data.push(arr[i].artist);
-    }
-    if (this.router.url !== '/') {
-      this.router.navigateByUrl('/');
-    }
-    this.store.dispatch(new LoadArtists(data));
   }
 
   showMobilSearchBar(): void {

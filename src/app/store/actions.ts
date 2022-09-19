@@ -8,7 +8,7 @@ export enum ActionTypes {
 export class LoadArtists implements Action {
   readonly type = ActionTypes.LoadArtists;
 
-  constructor(public payload: Artist[]) {}
+  constructor(public payload: Data[]) {}
 }
 
 export class LoadAlbums implements Action {
